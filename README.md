@@ -1,4 +1,4 @@
-# CBankSystem
+# C Bank System
 
 Sistema bancário de terminal desenvolvido em C puro. 
 
