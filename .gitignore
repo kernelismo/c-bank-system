@@ -1,0 +1,20 @@
+# 1. Executáveis compilados (o seu banco)
+banco
+
+# 2. Arquivos de objeto e bibliotecas
+*.o
+*.obj
+*.a
+*.so
+*.exe
+
+# 3. Arquivos de configuração do VS Code
+.vscode/
+
+# 4. Arquivos de debug e sistema
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*~
+*.swp
