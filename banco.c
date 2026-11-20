@@ -5,21 +5,20 @@ int main(void) {
     int valor_saque = 0;
     int valor_deposito = 0;
 
-    char menu;
+    int opcao;
     
     while (true) {
         printf("\n### MENU - C Bank ###\n");
-        printf("S - Saque\n");
-        printf("D - Depósito\n");
-        printf("V - Saldo\n");
-        printf("N - Sair\n");
+        printf("1 - Saque\n");
+        printf("2 - Depósito\n");
+        printf("3 - Saldo\n");
+        printf("4 - Sair\n");
         printf("Aguardando sua resposta: ");
 
-        scanf(" %c", &menu);
+        scanf("%d", &opcao);
 
-        switch (menu) {
-        case 's':
-        case 'S':
+        switch (opcao) {
+        case 1:
             printf("Digite o valor do saque: ");
             scanf("%i", &valor_saque);
             getchar();
@@ -34,8 +33,7 @@ int main(void) {
             }
             break;
         
-        case 'd':
-        case 'D':
+        case 2:
             printf("Digite o valor do depósito: ");
             scanf("%i", &valor_deposito);
             getchar();
@@ -50,13 +48,11 @@ int main(void) {
             }
             break;
 
-        case 'v':
-        case 'V':
+        case 3:
             printf("O seu saldo é R$: %i\n", valor_saldo);
             break;
         
-        case 'n':
-        case 'N':
+        case 4:
             printf("Saindo do Sistema...\n");
             return 0;
 
