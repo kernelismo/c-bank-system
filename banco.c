@@ -8,12 +8,12 @@ int main(void) {
     int opcao;
     
     while (true) {
-        printf("\n### MENU - C Bank ###\n");
-        printf("1 - Saque\n");
+        printf("\n--- Bem vindo - C Bank ---\n");
+        printf("\nSaldo da conta: %d\n", valor_saldo);
+        printf("\n1 - Saque\n");
         printf("2 - Depósito\n");
-        printf("3 - Saldo\n");
-        printf("4 - Sair\n");
-        printf("Aguardando sua resposta: ");
+        printf("3 - Sair\n");
+        printf("\nAguardando sua resposta: ");
 
         scanf("%d", &opcao);
 
@@ -25,7 +25,7 @@ int main(void) {
 
             if (valor_saque <= valor_saldo && valor_saque > 0) {
                 valor_saldo -= valor_saque;
-                printf("Seu saldo agora é: R$%i\n", valor_saldo);
+                printf("Saque realizado com sucesso!\n");
             }
 
             else {
@@ -40,20 +40,16 @@ int main(void) {
 
             if (valor_deposito > 0) {
                 valor_saldo += valor_deposito;
-                printf("Depósito realizado! Seu saldo é: R$%i\n", valor_saldo);
+                printf("Depósito realizado com sucesso!\n");
             }
 
             else {
                 printf("Não é possível depositar esse valor!\n");
             }
             break;
-
-        case 3:
-            printf("O seu saldo é R$: %i\n", valor_saldo);
-            break;
         
-        case 4:
-            printf("Saindo do Sistema...\n");
+        case 3:
+            printf("\nSaindo do Sistema...\n");
             return 0;
 
         default:
