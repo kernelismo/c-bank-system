@@ -1,17 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+int ler_numero();
 
 int main(void) {
-    int historico[10];
-    int qtd_transacoes = 0;
-
-    int inicio = 0;
-    int fim = qtd_transacoes;
-
     int valor_saldo = 0;
     int valor_saque = 0;
     int valor_deposito = 0;
 
     int opcao;
+
+    int historico[10];
+    int qtd_transacoes = 0;
     
     while (true) {
         printf("\n--- Bem vindo - C Bank ---\n");
@@ -22,13 +22,12 @@ int main(void) {
         printf("4 - Sair\n");
         printf("\nAguardando sua resposta: ");
 
-        scanf("%d", &opcao);
+        opcao = ler_numero();
 
         switch (opcao) {
         case 1:
             printf("Digite o valor do saque: ");
-            scanf("%i", &valor_saque);
-            getchar();
+            valor_saque = ler_numero();
 
             if (valor_saque <= valor_saldo && valor_saque > 0) {
                 valor_saldo -= valor_saque;
@@ -45,8 +44,7 @@ int main(void) {
         
         case 2:
             printf("Digite o valor do depósito: ");
-            scanf("%i", &valor_deposito);
-            getchar();
+            valor_deposito = ler_numero();
 
             if (valor_deposito > 0) {
                 valor_saldo += valor_deposito;
@@ -64,9 +62,11 @@ int main(void) {
         case 3:
             printf("\n--- EXTRATO ---\n");
 
+            int inicio = 0;
+            int fim = qtd_transacoes;
+
             if (qtd_transacoes > 10) {
                 inicio = qtd_transacoes - 10;
-                fim = qtd_transacoes;
             }
 
             for (int i = inicio; i < fim; i++) {
@@ -83,4 +83,10 @@ int main(void) {
             break;
         }
     }
+}
+
+int ler_numero() {
+    char texto[10];
+    fgets(texto, 10, stdin);
+    return atoi(texto);
 }
