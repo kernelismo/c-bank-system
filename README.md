@@ -4,22 +4,23 @@ Sistema bancário de terminal desenvolvido em C puro.
 
 Este é o meu projeto laboratório: é onde eu concentro todo o meu aprendizado da linguagem C, aplicando na prática os conceitos que estudo diariamente.
 
-## Funcionalidades (v3.0.0)
-- Menu interativo com `switch-case`.
-- Operação de Saque (com validação de saldo).
-- Operação de Depósito (com validação de valor).
-- Exibição automática do saldo no topo do menu.
-- **Extrato de transações:** histórico das últimas 10 operações usando vetores e buffer circular.
-- **Leitura segura de dados:** função customizada com `fgets` e `atoi` para evitar bugs de loop com entradas inválidas (letras).
+## Funcionalidades (v4.0.0)
+- **Sistema de Login e Cadastro:** Criação de contas com nome e senha, e autenticação segura.
+- **Múltiplas Contas:** Suporte para até 10 contas independentes, com dados isolados.
+- **Menu de Operações:** Interface interativa para realizar transações bancárias.
+- **Saque e Depósito:** Operações com validação de saldo e valor.
+- **Extrato de Transações:** Histórico das últimas 10 operações usando buffer circular.
+- **Leitura Segura:** Função customizada para evitar loops infinitos com entradas inválidas (letras).
 
 ## Tecnologias e Conceitos Aplicados
 - Linguagem C
 - Estruturas de decisão (`if/else`, `switch-case`)
 - Laços de repetição (`while`, `for`)
-- Vetores (arrays) e manipulação de índices
-- **Structs:** Agrupamento dos dados da conta (`saldo`, `historico`, `qtd_transacoes`).
-- **Modularização:** Separação da lógica em funções (`fazer_saque`, `fazer_deposito`, `mostrar_extrato`, `menu`).
-- **Ponteiros e Passagem por Referência:** Uso de `Conta *c` para que as funções alterem os dados reais na memória.
+- **Vetores e Arrays de Structs:** Gerenciamento de múltiplos usuários.
+- **Structs:** Agrupamento de dados (`saldo`, `historico`, `qtd_transacoes`, `nome`, `senha`).
+- **Modularização:** Código dividido em funções para facilitar a manutenção.
+- **Ponteiros e Passagem por Referência:** Uso de `&` e `*` para alterar dados reais na memória.
+- **Manipulação de Strings:** Uso de `fgets`, `strcspn` e `strcmp` para segurança e comparação de textos.
 
 ## Como compilar e rodar
 ```bash
