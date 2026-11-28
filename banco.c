@@ -11,7 +11,7 @@ typedef struct {
     char senha[20];
 } Conta;
 
-void menu_login(Conta contas[], int *total_contas);
+void menu_login();
 void criar_conta(Conta contas[], int *total_contas);
 int fazer_login(Conta contas[], int total_contas);
 void menu_operacoes(Conta *c);
@@ -30,7 +30,7 @@ int main(void) {
     
     while (true) {
         if (conta_logada == -1) {
-            menu_login(contas, &total_contas);
+            menu_login();
 
             opcao = ler_numero();
 
@@ -87,7 +87,7 @@ int main(void) {
     }
 }
 
-void menu_login(Conta contas[], int *total_contas) {
+void menu_login() {
     printf("\n--- Menu de Login - C Bank ---\n");
     printf("\n1 - Criar Conta\n");
     printf("2 - Login\n");
